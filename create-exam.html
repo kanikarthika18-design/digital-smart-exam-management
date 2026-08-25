@@ -1,0 +1,137 @@
+﻿<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>Create New Exam</title>
+
+    <link rel="stylesheet" href="css/style.css">
+</head>
+
+<body>
+
+    <div class="create-exam-page">
+
+        <div class="create-exam-card">
+
+            <!-- HEADER -->
+            <div class="create-exam-header">
+
+                <div class="create-icon">
+                    📝
+                </div>
+
+                <h1>Create New Exam</h1>
+
+                <p>
+                    Digital Smart Exam Management System
+                </p>
+
+            </div>
+
+
+            <!-- FORM -->
+            <div class="create-exam-form">
+
+                <h2>Exam Details</h2>
+
+                <div class="input-group">
+
+                    <label for="examName">
+                        Exam Name
+                    </label>
+
+                    <input type="text"
+                           id="examName"
+                           placeholder="Enter exam name">
+
+                </div>
+
+
+                <div class="input-group">
+
+                    <label for="subject">
+                        Subject
+                    </label>
+
+                    <input type="text"
+                           id="subject"
+                           placeholder="Enter subject">
+
+                </div>
+
+
+                <div class="input-group">
+
+                    <label for="duration">
+                        Duration
+                    </label>
+
+                    <div class="duration-input">
+
+                        <input type="number"
+                               id="duration"
+                               placeholder="Enter duration"
+                               min="1">
+
+                        <span>Minutes</span>
+
+                    </div>
+
+                </div>
+
+
+                <p id="message"></p>
+
+
+                <!-- BUTTONS -->
+                <div class="create-exam-buttons">
+
+                    <button type="button"
+                            class="back-btn"
+                            onclick="goBack()">
+
+                        ← Back
+
+                    </button>
+
+
+                    <button type="button"
+                            class="create-btn"
+                            onclick="saveExam()">
+
+                        ✓ Create Exam
+
+                    </button>
+
+                </div>
+
+            </div>
+
+
+            <!-- FOOTER -->
+            <div class="create-exam-footer">
+
+                <p>
+                    © 2026 Digital Smart Exam Management System
+                </p>
+
+                <span>
+                    Secure • Smart • Simple
+                </span>
+
+            </div>
+
+        </div>
+
+    </div>
+
+
+    <script src="js/create-exam.js"></script>
+
+</body>
+
+</html>

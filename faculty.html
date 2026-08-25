@@ -1,0 +1,361 @@
+﻿<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>Faculty Dashboard</title>
+
+    <link rel="stylesheet" href="css/style.css">
+</head>
+
+<body>
+
+    <div class="dashboard">
+
+        <!-- SIDEBAR -->
+        <aside class="sidebar">
+
+            <div class="brand">
+
+                <div class="brand-icon">
+                    🎓
+                </div>
+
+                <div>
+                    <h2>Smart Exam</h2>
+                    <p>Faculty Panel</p>
+                </div>
+
+            </div>
+
+
+            <nav class="sidebar-menu">
+
+                <button class="menu-item active">
+                    🏠
+                    <span>Dashboard</span>
+                </button>
+
+                <button class="menu-item" onclick="viewExams()">
+                    📝
+                    <span>View Exams</span>
+                </button>
+
+                <button class="menu-item" onclick="viewQuestions()">
+                    ❓
+                    <span>View Questions</span>
+                </button>
+
+                <button class="menu-item" onclick="viewResults()">
+                    📊
+                    <span>Student Results</span>
+                </button>
+
+                <button class="menu-item" onclick="viewPerformance()">
+                    📈
+                    <span>Performance</span>
+                </button>
+
+            </nav>
+
+
+            <button class="logout-btn" onclick="logout()">
+                🚪 Logout
+            </button>
+
+        </aside>
+
+
+        <!-- MAIN CONTENT -->
+        <main class="main-content">
+
+            <!-- HEADER -->
+            <header class="dashboard-header">
+
+                <div>
+
+                    <p class="header-label">
+                        FACULTY DASHBOARD
+                    </p>
+
+                    <h1 id="welcomeFaculty">
+                        Welcome, Faculty 👋
+                    </h1>
+
+                    <p class="header-subtitle">
+                        Manage exams and monitor student performance
+                    </p>
+
+                </div>
+
+
+                <div class="admin-profile">
+
+                    <div class="profile-icon">
+                        F
+                    </div>
+
+                    <div>
+                        <strong>Faculty</strong>
+                        <small>Exam Manager</small>
+                    </div>
+
+                </div>
+
+            </header>
+
+
+            <!-- FACULTY STAT CARDS -->
+            <section class="stats-grid">
+
+                <div class="stat-card">
+
+                    <div class="stat-icon blue">
+                        📝
+                    </div>
+
+                    <div>
+                        <p>Available Exams</p>
+                        <h2>1</h2>
+                    </div>
+
+                </div>
+
+
+                <div class="stat-card">
+
+                    <div class="stat-icon purple">
+                        ❓
+                    </div>
+
+                    <div>
+                        <p>Questions</p>
+                        <h2>View</h2>
+                    </div>
+
+                </div>
+
+
+                <div class="stat-card">
+
+                    <div class="stat-icon green">
+                        📊
+                    </div>
+
+                    <div>
+                        <p>Student Results</p>
+                        <h2>View</h2>
+                    </div>
+
+                </div>
+
+
+                <div class="stat-card">
+
+                    <div class="stat-icon orange">
+                        📈
+                    </div>
+
+                    <div>
+                        <p>Performance</p>
+                        <h2>Analysis</h2>
+                    </div>
+
+                </div>
+
+            </section>
+
+
+            <!-- MAIN CARDS -->
+            <section class="content-grid">
+
+                <!-- EXAM MANAGEMENT -->
+                <div class="dashboard-card">
+
+                    <div class="card-header">
+
+                        <div>
+
+                            <p class="card-label">
+                                EXAM MANAGEMENT
+                            </p>
+
+                            <h2>
+                                Faculty Actions
+                            </h2>
+
+                        </div>
+
+                        <span class="card-symbol">
+                            ⚡
+                        </span>
+
+                    </div>
+
+
+                    <div class="action-grid">
+
+                        <button class="action-card"
+                                onclick="viewExams()">
+
+                            <span>📝</span>
+
+                            <strong>
+                                View Exams
+                            </strong>
+
+                            <small>
+                                View available examinations
+                            </small>
+
+                        </button>
+
+
+                        <button class="action-card"
+                                onclick="viewQuestions()">
+
+                            <span>❓</span>
+
+                            <strong>
+                                View Questions
+                            </strong>
+
+                            <small>
+                                Manage exam questions
+                            </small>
+
+                        </button>
+
+
+                        <button class="action-card"
+                                onclick="viewResults()">
+
+                            <span>📊</span>
+
+                            <strong>
+                                Student Results
+                            </strong>
+
+                            <small>
+                                View student exam results
+                            </small>
+
+                        </button>
+
+
+                        <button class="action-card"
+                                onclick="viewPerformance()">
+
+                            <span>📈</span>
+
+                            <strong>
+                                Performance Analysis
+                            </strong>
+
+                            <small>
+                                Analyse student performance
+                            </small>
+
+                        </button>
+
+                    </div>
+
+                </div>
+
+
+                <!-- FACULTY INFORMATION -->
+                <div class="dashboard-card">
+
+                    <div class="card-header">
+
+                        <div>
+
+                            <p class="card-label">
+                                INFORMATION
+                            </p>
+
+                            <h2>
+                                Faculty Overview
+                            </h2>
+
+                        </div>
+
+                        <span class="card-symbol">
+                            🎓
+                        </span>
+
+                    </div>
+
+
+                    <div class="analysis-row">
+
+                        <div class="analysis-item">
+
+                            <span>
+                                Role
+                            </span>
+
+                            <strong>
+                                Faculty
+                            </strong>
+
+                        </div>
+
+
+                        <div class="analysis-item">
+
+                            <span>
+                                Access
+                            </span>
+
+                            <strong>
+                                Exam Management
+                            </strong>
+
+                        </div>
+
+
+                        <div class="analysis-item">
+
+                            <span>
+                                Status
+                            </span>
+
+                            <strong>
+                                Active
+                            </strong>
+
+                        </div>
+
+                    </div>
+
+                </div>
+
+            </section>
+
+
+            <!-- FOOTER -->
+            <footer class="dashboard-footer">
+
+                <p>
+                    © 2026 Digital Smart Exam Management System
+                </p>
+
+                <span>
+                    Secure • Smart • Simple
+                </span>
+
+            </footer>
+
+        </main>
+
+    </div>
+
+
+    <script src="js/faculty.js"></script>
+
+</body>
+
+</html>

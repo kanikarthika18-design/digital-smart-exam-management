@@ -1,0 +1,141 @@
+﻿<!DOCTYPE html>
+<html lang="en">
+
+<head>
+
+    <meta charset="UTF-8">
+
+    <meta name="viewport"
+          content="width=device-width, initial-scale=1.0">
+
+    <title>Computer Fundamentals Exam</title>
+
+    <link rel="stylesheet"
+          href="css/style.css">
+
+</head>
+
+<body>
+
+    <!-- ================================
+         EXAM PAGE
+    ================================= -->
+
+    <div class="exam-page">
+
+        <div class="exam-container">
+
+
+            <!-- ================================
+                 EXAM HEADER
+            ================================= -->
+
+            <div class="exam-header">
+
+                <h1>
+                    Computer Fundamentals
+                </h1>
+
+                <p>
+                    Digital Smart Exam Management System
+                </p>
+
+            </div>
+
+
+            <!-- ================================
+                 QUESTIONS
+            ================================= -->
+
+            <div class="question-card">
+
+                <div class="question-number">
+                    QUESTIONS
+                </div>
+
+                <h2>
+                    Answer the following questions
+                </h2>
+
+
+                <!-- QUESTION AREA -->
+
+                <div id="questionContainer">
+
+                    <!-- Question will be loaded here -->
+
+                </div>
+
+
+                <!-- ================================
+                     NAVIGATION BUTTONS
+                ================================= -->
+
+                <div class="exam-buttons">
+
+                    <button type="button"
+                            class="exam-btn secondary"
+                            onclick="previousQuestion()">
+
+                        ← Previous
+
+                    </button>
+
+
+                    <button type="button"
+                            class="exam-btn"
+                            onclick="nextQuestion()">
+
+                        Next →
+
+                    </button>
+
+                </div>
+
+
+                <!-- ================================
+                     SUBMIT
+                ================================= -->
+
+                <button type="button"
+                        class="submit-exam-btn"
+                        onclick="submitExam()">
+
+                    ☑ Submit Exam
+
+                </button>
+
+            </div>
+
+
+            <!-- ================================
+                 FOOTER
+            ================================= -->
+
+            <footer class="exam-footer">
+
+                <p>
+                    © 2026 Digital Smart Exam Management System
+                </p>
+
+                <span>
+                    Secure • Smart • Simple
+                </span>
+
+            </footer>
+
+
+        </div>
+
+    </div>
+
+
+    <!-- ================================
+         EXAM JAVASCRIPT
+    ================================= -->
+
+    <script src="js/exam.js"></script>
+
+</body>
+
+</html>

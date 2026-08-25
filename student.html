@@ -1,0 +1,468 @@
+﻿<!DOCTYPE html>
+<html lang="en">
+
+<head>
+
+    <meta charset="UTF-8">
+
+    <meta name="viewport"
+          content="width=device-width, initial-scale=1.0">
+
+    <title>Student Dashboard</title>
+
+    <link rel="stylesheet"
+          href="css/style.css">
+
+</head>
+
+
+<body>
+
+    <div class="dashboard">
+
+
+        <!-- SIDEBAR -->
+
+        <aside class="sidebar">
+
+
+            <div class="brand">
+
+                <div class="brand-icon">
+                    🎓
+                </div>
+
+                <div>
+                    <h2>Smart Exam</h2>
+                    <p>Student Panel</p>
+                </div>
+
+            </div>
+
+
+            <nav class="sidebar-menu">
+
+
+                <button class="menu-item active"
+                        onclick="goDashboard()">
+
+                    🏠
+                    <span>Dashboard</span>
+
+                </button>
+
+
+                <button class="menu-item"
+                        onclick="startExam()">
+
+                    📝
+                    <span>Start Exam</span>
+
+                </button>
+
+
+                <button class="menu-item"
+                        onclick="viewMyResults()">
+
+                    📊
+                    <span>My Results</span>
+
+                </button>
+
+
+            </nav>
+
+
+            <button class="logout-btn"
+                    onclick="logout()">
+
+                🚪 Logout
+
+            </button>
+
+
+        </aside>
+
+
+
+        <!-- MAIN CONTENT -->
+
+        <main class="main-content">
+
+
+            <!-- HEADER -->
+
+            <header class="dashboard-header">
+
+
+                <div>
+
+                    <p class="header-label">
+                        STUDENT DASHBOARD
+                    </p>
+
+
+                    <h1 id="welcomeStudent">
+                        Welcome, Student 👋
+                    </h1>
+
+
+                    <p class="header-subtitle">
+                        Take exams and monitor your smart performance
+                    </p>
+
+                </div>
+
+
+
+                <div class="admin-profile">
+
+
+                    <div class="profile-icon">
+                        S
+                    </div>
+
+
+                    <div>
+
+                        <strong>
+                            Student
+                        </strong>
+
+                        <small>
+                            Exam Participant
+                        </small>
+
+                    </div>
+
+
+                </div>
+
+
+            </header>
+
+
+
+            <!-- STAT CARDS -->
+
+            <section class="stats-grid">
+
+
+                <div class="stat-card">
+
+                    <div class="stat-icon blue">
+                        📝
+                    </div>
+
+                    <div>
+
+                        <p>
+                            Total Exams
+                        </p>
+
+                        <h2 id="totalExams">
+                            0
+                        </h2>
+
+                    </div>
+
+                </div>
+
+
+
+                <div class="stat-card">
+
+                    <div class="stat-icon purple">
+                        📈
+                    </div>
+
+                    <div>
+
+                        <p>
+                            Average Score
+                        </p>
+
+                        <h2 id="averageScore">
+                            0%
+                        </h2>
+
+                    </div>
+
+                </div>
+
+
+
+                <div class="stat-card">
+
+                    <div class="stat-icon green">
+                        🏆
+                    </div>
+
+                    <div>
+
+                        <p>
+                            Highest Score
+                        </p>
+
+                        <h2 id="highestScore">
+                            0%
+                        </h2>
+
+                    </div>
+
+                </div>
+
+
+
+                <div class="stat-card">
+
+                    <div class="stat-icon orange">
+                        🎯
+                    </div>
+
+                    <div>
+
+                        <p>
+                            Pass / Fail
+                        </p>
+
+                        <h2 id="passFail">
+                            -
+                        </h2>
+
+                    </div>
+
+                </div>
+
+
+            </section>
+
+
+
+            <!-- CONTENT GRID -->
+
+            <section class="content-grid">
+
+
+
+                <!-- AVAILABLE EXAM -->
+
+                <div class="dashboard-card">
+
+
+                    <div class="card-header">
+
+
+                        <div>
+
+                            <p class="card-label">
+                                AVAILABLE EXAM
+                            </p>
+
+
+                            <h2>
+                                Computer Fundamentals
+                            </h2>
+
+                        </div>
+
+
+                        <span class="card-symbol">
+                            📝
+                        </span>
+
+
+                    </div>
+
+
+
+                    <div class="analysis-row">
+
+
+                        <div class="analysis-item">
+
+                            <span>
+                                Subject
+                            </span>
+
+                            <strong>
+                                Computer
+                            </strong>
+
+                        </div>
+
+
+
+                        <div class="analysis-item">
+
+                            <span>
+                                Duration
+                            </span>
+
+                            <strong>
+                                30 Minutes
+                            </strong>
+
+                        </div>
+
+
+
+                        <div class="analysis-item">
+
+                            <span>
+                                Status
+                            </span>
+
+                            <strong>
+                                Available
+                            </strong>
+
+                        </div>
+
+
+                    </div>
+
+
+
+                    <button class="action-card"
+                            onclick="startExam()"
+                            style="width:100%; margin-top:18px;">
+
+                        <span>
+                            🚀
+                        </span>
+
+                        <strong>
+                            Start Exam
+                        </strong>
+
+                        <small>
+                            Begin your examination
+                        </small>
+
+                    </button>
+
+
+                </div>
+
+
+
+                <!-- MY PERFORMANCE -->
+
+                <div class="dashboard-card">
+
+
+                    <div class="card-header">
+
+
+                        <div>
+
+                            <p class="card-label">
+                                SMART PERFORMANCE
+                            </p>
+
+                            <h2>
+                                My Performance
+                            </h2>
+
+                        </div>
+
+
+                        <span class="card-symbol">
+                            📊
+                        </span>
+
+
+                    </div>
+
+
+
+                    <div class="analysis-row">
+
+
+                        <div class="analysis-item">
+
+                            <span>
+                                Subject-wise Performance
+                            </span>
+
+                            <strong id="subjectPerformance">
+                                No data yet
+                            </strong>
+
+                        </div>
+
+
+
+                        <div class="analysis-item">
+
+                            <span>
+                                Improvement Trend
+                            </span>
+
+                            <strong id="improvementTrend">
+                                Complete exams
+                            </strong>
+
+                        </div>
+
+
+
+                        <div class="analysis-item">
+
+                            <span>
+                                Results
+                            </span>
+
+
+                            <button class="menu-item"
+                                    onclick="viewMyResults()"
+                                    style="color:#2563eb; padding:0; margin-top:8px;">
+
+                                View My Results →
+
+                            </button>
+
+                        </div>
+
+
+                    </div>
+
+
+                </div>
+
+
+            </section>
+
+
+
+            <!-- FOOTER -->
+
+            <footer class="dashboard-footer">
+
+                <p>
+                    © 2026 Digital Smart Exam Management System
+                </p>
+
+                <span>
+                    Secure • Smart • Simple
+                </span>
+
+            </footer>
+
+
+        </main>
+
+
+    </div>
+
+
+
+    <!-- VERY IMPORTANT -->
+
+    <script src="js/student.js"></script>
+
+
+</body>
+
+</html>

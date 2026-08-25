@@ -1,0 +1,748 @@
+﻿```html
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+
+    <meta charset="UTF-8">
+
+    <meta name="viewport"
+          content="width=device-width, initial-scale=1.0">
+
+    <title>Smart Question Bank</title>
+
+    <link rel="stylesheet"
+          href="css/style.css">
+
+</head>
+
+
+<body>
+
+    <div class="dashboard">
+
+
+        <!-- ===============================
+             SIDEBAR
+        =============================== -->
+
+        <aside class="sidebar">
+
+            <div class="brand">
+
+                <div class="brand-icon">
+                    🎓
+                </div>
+
+                <div>
+                    <h2>Smart Exam</h2>
+                    <p>Admin Panel</p>
+                </div>
+
+            </div>
+
+
+            <nav class="sidebar-menu">
+
+                <button class="menu-item"
+                        onclick="goToAdmin()">
+
+                    🏠
+                    <span>Dashboard</span>
+
+                </button>
+
+
+                <button class="menu-item"
+                        onclick="createExam()">
+
+                    📝
+                    <span>Create Exam</span>
+
+                </button>
+
+
+                <button class="menu-item active">
+
+                    ❓
+                    <span>Question Bank</span>
+
+                </button>
+
+
+                <button class="menu-item"
+                        onclick="viewResults()">
+
+                    📊
+                    <span>Student Results</span>
+
+                </button>
+
+
+                <button class="menu-item"
+                        onclick="viewPerformance()">
+
+                    📈
+                    <span>Performance</span>
+
+                </button>
+
+            </nav>
+
+
+            <button class="logout-btn"
+                    onclick="logout()">
+
+                🚪 Logout
+
+            </button>
+
+        </aside>
+
+
+
+        <!-- ===============================
+             MAIN CONTENT
+        =============================== -->
+
+        <main class="main-content">
+
+
+            <!-- ===============================
+                 HEADER
+            =============================== -->
+
+            <header class="dashboard-header">
+
+                <div>
+
+                    <p class="header-label">
+                        SMART QUESTION BANK
+                    </p>
+
+                    <h1>
+                        Add Question ❓
+                    </h1>
+
+                    <p class="header-subtitle">
+                        Create and manage smart examination questions
+                    </p>
+
+                </div>
+
+
+                <div class="admin-profile">
+
+                    <div class="profile-icon">
+                        A
+                    </div>
+
+                    <div>
+
+                        <strong>
+                            Administrator
+                        </strong>
+
+                        <small>
+                            Exam Administrator
+                        </small>
+
+                    </div>
+
+                </div>
+
+            </header>
+
+
+
+            <!-- ===============================
+                 CREATE QUESTION + INFORMATION
+            =============================== -->
+
+            <section class="content-grid">
+
+
+                <!-- ===============================
+                     QUESTION FORM
+                =============================== -->
+
+                <div class="dashboard-card">
+
+
+                    <div class="card-header">
+
+                        <div>
+
+                            <p class="card-label">
+                                QUESTION DETAILS
+                            </p>
+
+                            <h2>
+                                Create New Question
+                            </h2>
+
+                        </div>
+
+                        <span class="card-symbol">
+                            🧠
+                        </span>
+
+                    </div>
+
+
+
+                    <!-- SUBJECT -->
+
+                    <div style="margin-bottom:18px;">
+
+                        <label>
+                            Subject
+                        </label>
+
+                        <select id="subject"
+                                style="
+                                width:100%;
+                                padding:13px;
+                                margin-top:7px;
+                                border:1px solid #d1d5db;
+                                border-radius:9px;
+                                box-sizing:border-box;
+                                background:white;
+                                ">
+
+                            <option value="">
+                                -- Select Subject --
+                            </option>
+
+                            <option value="Computer Science">
+                                Computer Science
+                            </option>
+
+                            <option value="Programming">
+                                Programming
+                            </option>
+
+                            <option value="Database">
+                                Database
+                            </option>
+
+                            <option value="Networking">
+                                Networking
+                            </option>
+
+                            <option value="Web Technology">
+                                Web Technology
+                            </option>
+
+                        </select>
+
+                    </div>
+
+
+
+                    <!-- TOPIC -->
+
+                    <div style="margin-bottom:18px;">
+
+                        <label>
+                            Topic
+                        </label>
+
+                        <input type="text"
+                               id="topic"
+                               placeholder="Example: HTML, JavaScript, DBMS"
+                               style="
+                               width:100%;
+                               padding:13px;
+                               margin-top:7px;
+                               border:1px solid #d1d5db;
+                               border-radius:9px;
+                               box-sizing:border-box;
+                               ">
+
+                    </div>
+
+
+
+                    <!-- DIFFICULTY -->
+
+                    <div style="margin-bottom:18px;">
+
+                        <label>
+                            Difficulty Level
+                        </label>
+
+                        <select id="difficulty"
+                                style="
+                                width:100%;
+                                padding:13px;
+                                margin-top:7px;
+                                border:1px solid #d1d5db;
+                                border-radius:9px;
+                                box-sizing:border-box;
+                                background:white;
+                                ">
+
+                            <option value="">
+                                -- Select Difficulty --
+                            </option>
+
+                            <option value="Easy">
+                                🟢 Easy
+                            </option>
+
+                            <option value="Medium">
+                                🟡 Medium
+                            </option>
+
+                            <option value="Hard">
+                                🔴 Hard
+                            </option>
+
+                        </select>
+
+                    </div>
+
+
+
+                    <!-- QUESTION -->
+
+                    <div style="margin-bottom:18px;">
+
+                        <label>
+                            Question
+                        </label>
+
+                        <input type="text"
+                               id="question"
+                               placeholder="Enter your question"
+                               style="
+                               width:100%;
+                               padding:13px;
+                               margin-top:7px;
+                               border:1px solid #d1d5db;
+                               border-radius:9px;
+                               box-sizing:border-box;
+                               ">
+
+                    </div>
+
+
+
+                    <!-- OPTION A -->
+
+                    <div style="margin-bottom:18px;">
+
+                        <label>
+                            Option A
+                        </label>
+
+                        <input type="text"
+                               id="optionA"
+                               placeholder="Enter option A"
+                               style="
+                               width:100%;
+                               padding:13px;
+                               margin-top:7px;
+                               border:1px solid #d1d5db;
+                               border-radius:9px;
+                               box-sizing:border-box;
+                               ">
+
+                    </div>
+
+
+
+                    <!-- OPTION B -->
+
+                    <div style="margin-bottom:18px;">
+
+                        <label>
+                            Option B
+                        </label>
+
+                        <input type="text"
+                               id="optionB"
+                               placeholder="Enter option B"
+                               style="
+                               width:100%;
+                               padding:13px;
+                               margin-top:7px;
+                               border:1px solid #d1d5db;
+                               border-radius:9px;
+                               box-sizing:border-box;
+                               ">
+
+                    </div>
+
+
+
+                    <!-- OPTION C -->
+
+                    <div style="margin-bottom:18px;">
+
+                        <label>
+                            Option C
+                        </label>
+
+                        <input type="text"
+                               id="optionC"
+                               placeholder="Enter option C"
+                               style="
+                               width:100%;
+                               padding:13px;
+                               margin-top:7px;
+                               border:1px solid #d1d5db;
+                               border-radius:9px;
+                               box-sizing:border-box;
+                               ">
+
+                    </div>
+
+
+
+                    <!-- OPTION D -->
+
+                    <div style="margin-bottom:18px;">
+
+                        <label>
+                            Option D
+                        </label>
+
+                        <input type="text"
+                               id="optionD"
+                               placeholder="Enter option D"
+                               style="
+                               width:100%;
+                               padding:13px;
+                               margin-top:7px;
+                               border:1px solid #d1d5db;
+                               border-radius:9px;
+                               box-sizing:border-box;
+                               ">
+
+                    </div>
+
+
+
+                    <!-- CORRECT ANSWER -->
+
+                    <div style="margin-bottom:20px;">
+
+                        <label>
+                            Correct Answer
+                        </label>
+
+                        <select id="correctAnswer"
+                                style="
+                                width:100%;
+                                padding:13px;
+                                margin-top:7px;
+                                border:1px solid #d1d5db;
+                                border-radius:9px;
+                                box-sizing:border-box;
+                                background:white;
+                                ">
+
+                            <option value="">
+                                -- Select Correct Answer --
+                            </option>
+
+                            <option value="A">
+                                A
+                            </option>
+
+                            <option value="B">
+                                B
+                            </option>
+
+                            <option value="C">
+                                C
+                            </option>
+
+                            <option value="D">
+                                D
+                            </option>
+
+                        </select>
+
+                    </div>
+
+
+
+                    <!-- MESSAGE -->
+
+                    <p id="message"
+                       style="
+                       min-height:20px;
+                       margin-bottom:15px;
+                       font-weight:bold;
+                       ">
+                    </p>
+
+
+
+                    <!-- BUTTONS -->
+
+                    <div style="
+                         display:flex;
+                         gap:12px;
+                         flex-wrap:wrap;
+                         ">
+
+                        <button onclick="addQuestion()"
+                                style="
+                                background:#2563eb;
+                                color:white;
+                                border:none;
+                                padding:13px 22px;
+                                border-radius:9px;
+                                font-weight:bold;
+                                cursor:pointer;
+                                ">
+
+                            ➕ Add Question
+
+                        </button>
+
+
+                        <button onclick="goToAdmin()"
+                                style="
+                                background:#e5e7eb;
+                                color:#111827;
+                                border:none;
+                                padding:13px 22px;
+                                border-radius:9px;
+                                font-weight:bold;
+                                cursor:pointer;
+                                ">
+
+                            🏠 Back to Dashboard
+
+                        </button>
+
+                    </div>
+
+                </div>
+
+
+
+                <!-- ===============================
+                     INFORMATION CARD
+                =============================== -->
+
+                <div class="dashboard-card">
+
+                    <div class="card-header">
+
+                        <div>
+
+                            <p class="card-label">
+                                SMART FEATURES
+                            </p>
+
+                            <h2>
+                                Question Bank
+                            </h2>
+
+                        </div>
+
+                        <span class="card-symbol">
+                            🧠
+                        </span>
+
+                    </div>
+
+
+
+                    <div class="analysis-item"
+                         style="margin-bottom:15px;">
+
+                        <span>
+                            📚 Subject
+                        </span>
+
+                        <strong>
+                            Organize questions by subject
+                        </strong>
+
+                    </div>
+
+
+                    <div class="analysis-item"
+                         style="margin-bottom:15px;">
+
+                        <span>
+                            🎯 Topic
+                        </span>
+
+                        <strong>
+                            Identify specific learning topics
+                        </strong>
+
+                    </div>
+
+
+                    <div class="analysis-item"
+                         style="margin-bottom:15px;">
+
+                        <span>
+                            🧠 Difficulty
+                        </span>
+
+                        <strong>
+                            Easy / Medium / Hard
+                        </strong>
+
+                    </div>
+
+
+
+                    <div style="
+                         margin-top:25px;
+                         padding:20px;
+                         background:#f8fafc;
+                         border-radius:12px;
+                         text-align:center;
+                         ">
+
+                        <div style="
+                             font-size:38px;
+                             margin-bottom:8px;
+                             ">
+                            🤖
+                        </div>
+
+                        <h3>
+                            Smart Exam Ready
+                        </h3>
+
+                        <p style="
+                            color:#6b7280;
+                            margin-top:8px;
+                            line-height:1.5;
+                            ">
+
+                            Questions can be organized by
+                            subject, topic and difficulty level
+                            for smarter exam creation.
+
+                        </p>
+
+                    </div>
+
+                </div>
+
+            </section>
+
+
+
+            <!-- ===============================
+                 SAVED QUESTIONS
+            =============================== -->
+
+            <section class="dashboard-card"
+                     style="
+                     margin-top:25px;
+                     ">
+
+                <div class="card-header">
+
+                    <div>
+
+                        <p class="card-label">
+                            QUESTION BANK
+                        </p>
+
+                        <h2>
+                            Saved Questions
+                        </h2>
+
+                        <p style="
+                           color:#6b7280;
+                           margin-top:6px;
+                           ">
+
+                            View and manage your created questions
+
+                        </p>
+
+                    </div>
+
+                    <span class="card-symbol">
+                        📚
+                    </span>
+
+                </div>
+
+
+                <!-- QUESTIONS WILL APPEAR HERE -->
+
+                <div id="questionList">
+
+                </div>
+
+            </section>
+
+
+
+            <!-- ===============================
+                 FOOTER
+            =============================== -->
+
+            <footer class="dashboard-footer">
+
+                <p>
+                    © 2026 Digital Smart Exam Management System
+                </p>
+
+                <span>
+                    Secure • Smart • Simple
+                </span>
+
+            </footer>
+
+
+        </main>
+
+    </div>
+
+
+
+    <!-- ===============================
+         ADMIN JAVASCRIPT
+    =============================== -->
+    <!-- IMPORTANT:
+         admin.js must be loaded ONLY ONCE -->
+
+    <script src="js/admin.js"></script>
+
+
+    <!-- ===============================
+         LOAD SAVED QUESTIONS
+    =============================== -->
+
+    <script>
+
+        window.addEventListener(
+            "DOMContentLoaded",
+            function () {
+
+                displayQuestions();
+
+            }
+        );
+
+    </script>
+    <script src="js/admin.js"></script>
+
+    <script>
+        window.addEventListener("DOMContentLoaded", function () {
+            displayQuestions();
+        });
+    </script>
+
+</body>
+
+</html>
+```

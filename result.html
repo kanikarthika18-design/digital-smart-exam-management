@@ -1,0 +1,509 @@
+﻿<!DOCTYPE html>
+<html lang="en">
+
+<head>
+
+    <meta charset="UTF-8">
+
+    <meta name="viewport"
+          content="width=device-width, initial-scale=1.0">
+
+    <title>Exam Result</title>
+
+    <link rel="stylesheet"
+          href="css/style.css">
+
+</head>
+
+
+<body>
+
+    <div class="dashboard">
+
+
+        <!-- SIDEBAR -->
+
+        <aside class="sidebar">
+
+            <div class="brand">
+
+                <div class="brand-icon">
+                    🎓
+                </div>
+
+                <div>
+
+                    <h2>
+                        Smart Exam
+                    </h2>
+
+                    <p>
+                        Student Panel
+                    </p>
+
+                </div>
+
+            </div>
+
+
+            <nav class="sidebar-menu">
+
+                <button class="menu-item"
+                        onclick="goToStudent()">
+
+                    🏠
+
+                    <span>
+                        Dashboard
+                    </span>
+
+                </button>
+
+
+                <button class="menu-item"
+                        onclick="goToStudent()">
+
+                    📝
+
+                    <span>
+                        Start Exam
+                    </span>
+
+                </button>
+
+
+                <button class="menu-item active">
+
+                    🏆
+
+                    <span>
+                        My Result
+                    </span>
+
+                </button>
+
+            </nav>
+
+
+            <button class="logout-btn"
+                    onclick="logout()">
+
+                🚪 Logout
+
+            </button>
+
+        </aside>
+
+
+
+        <!-- MAIN CONTENT -->
+
+        <main class="main-content">
+
+
+            <!-- HEADER -->
+
+            <header class="dashboard-header">
+
+                <div>
+
+                    <p class="header-label">
+                        EXAM RESULT
+                    </p>
+
+                    <h1>
+                        Your Exam Result 🏆
+                    </h1>
+
+                    <p class="header-subtitle">
+                        View your examination performance
+                    </p>
+
+                </div>
+
+
+                <div class="admin-profile">
+
+                    <div class="profile-icon">
+                        S
+                    </div>
+
+                    <div>
+
+                        <strong>
+                            Student
+                        </strong>
+
+                        <small>
+                            Exam Participant
+                        </small>
+
+                    </div>
+
+                </div>
+
+            </header>
+
+
+
+            <!-- RESULT STAT CARDS -->
+
+            <section class="stats-grid">
+
+
+                <!-- SCORE -->
+
+                <div class="stat-card">
+
+                    <div class="stat-icon blue">
+                        📝
+                    </div>
+
+                    <div>
+
+                        <p>
+                            Score
+                        </p>
+
+                        <h2 id="score">
+                            0 / 0
+                        </h2>
+
+                    </div>
+
+                </div>
+
+
+
+                <!-- TOTAL QUESTIONS -->
+
+                <div class="stat-card">
+
+                    <div class="stat-icon purple">
+                        📋
+                    </div>
+
+                    <div>
+
+                        <p>
+                            Total Questions
+                        </p>
+
+                        <h2 id="totalQuestions">
+                            0
+                        </h2>
+
+                    </div>
+
+                </div>
+
+
+
+                <!-- PERCENTAGE -->
+
+                <div class="stat-card">
+
+                    <div class="stat-icon green">
+                        📈
+                    </div>
+
+                    <div>
+
+                        <p>
+                            Percentage
+                        </p>
+
+                        <h2 id="percentage">
+                            0%
+                        </h2>
+
+                    </div>
+
+                </div>
+
+
+
+                <!-- STATUS -->
+
+                <div class="stat-card">
+
+                    <div class="stat-icon orange">
+                        🎯
+                    </div>
+
+                    <div>
+
+                        <p>
+                            Status
+                        </p>
+
+                        <h2 id="status">
+                            -
+                        </h2>
+
+                    </div>
+
+                </div>
+
+            </section>
+
+
+
+            <!-- RESULT CONTENT -->
+
+            <section class="content-grid">
+
+
+                <!-- RESULT SUMMARY -->
+
+                <div class="dashboard-card">
+
+
+                    <div class="card-header">
+
+                        <div>
+
+                            <p class="card-label">
+                                RESULT SUMMARY
+                            </p>
+
+                            <h2>
+                                Computer Fundamentals
+                            </h2>
+
+                        </div>
+
+
+                        <span class="card-symbol">
+                            🏆
+                        </span>
+
+                    </div>
+
+
+
+                    <!-- RESULT DETAILS -->
+
+                    <div class="analysis-row">
+
+
+                        <div class="analysis-item">
+
+                            <span>
+                                Score
+                            </span>
+
+                            <strong id="resultScore">
+                                0 / 0
+                            </strong>
+
+                        </div>
+
+
+
+                        <div class="analysis-item">
+
+                            <span>
+                                Percentage
+                            </span>
+
+                            <strong id="resultPercentage">
+                                0%
+                            </strong>
+
+                        </div>
+
+
+
+                        <div class="analysis-item">
+
+                            <span>
+                                Result
+                            </span>
+
+                            <strong id="resultStatus">
+                                -
+                            </strong>
+
+                        </div>
+
+
+                    </div>
+
+
+
+                    <!-- PERFORMANCE MESSAGE -->
+
+                    <div style="
+                        margin-top:25px;
+                        padding:20px;
+                        background:#f8fafc;
+                        border-radius:12px;
+                        text-align:center;
+                    ">
+
+                        <h3 id="performance">
+                            Performance
+                        </h3>
+
+
+                        <p id="performanceMessage"
+                           style="
+                               margin-top:8px;
+                               color:#6b7280;
+                           ">
+
+                            Exam result is being calculated...
+
+                        </p>
+
+                    </div>
+
+
+
+                    <!-- BACK TO DASHBOARD -->
+
+                    <a href="student.html"
+                       class="action-card"
+                       style="
+                           width:100%;
+                           margin-top:20px;
+                           text-align:center;
+                           display:block;
+                           text-decoration:none;
+                           color:inherit;
+                       ">
+
+                        <span>
+                            🏠
+                        </span>
+
+                        <strong>
+                            Back to Student Dashboard
+                        </strong>
+
+                        <small>
+                            Return to your dashboard
+                        </small>
+
+                    </a>
+
+
+                </div>
+
+
+
+                <!-- SMART ANALYSIS -->
+
+                <div class="dashboard-card">
+
+
+                    <div class="card-header">
+
+                        <div>
+
+                            <p class="card-label">
+                                SMART ANALYSIS
+                            </p>
+
+                            <h2>
+                                Performance
+                            </h2>
+
+                        </div>
+
+
+                        <span class="card-symbol">
+                            📊
+                        </span>
+
+                    </div>
+
+
+
+                    <!-- SUBJECT -->
+
+                    <div class="analysis-item"
+                         style="margin-bottom:12px;">
+
+                        <span>
+                            Subject
+                        </span>
+
+                        <strong>
+                            Computer
+                        </strong>
+
+                    </div>
+
+
+
+                    <!-- EXAM -->
+
+                    <div class="analysis-item"
+                         style="margin-bottom:12px;">
+
+                        <span>
+                            Exam
+                        </span>
+
+                        <strong>
+                            Computer Fundamentals
+                        </strong>
+
+                    </div>
+
+
+
+                    <!-- PERFORMANCE -->
+
+                    <div class="analysis-item">
+
+                        <span>
+                            Performance Status
+                        </span>
+
+                        <strong id="performanceStatus">
+                            -
+                        </strong>
+
+                    </div>
+
+
+                </div>
+
+
+            </section>
+
+
+
+            <!-- FOOTER -->
+
+            <footer class="dashboard-footer">
+
+                <p>
+                    © 2026 Digital Smart Exam Management System
+                </p>
+
+                <span>
+                    Secure • Smart • Simple
+                </span>
+
+            </footer>
+
+
+        </main>
+
+
+    </div>
+
+
+
+    <!-- RESULT JAVASCRIPT -->
+
+    <script src="js/result.js"></script>
+
+
+</body>
+
+</html>

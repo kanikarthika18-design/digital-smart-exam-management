@@ -1,0 +1,67 @@
+<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="15.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <Import Project="$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props" Condition="Exists('$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props')" />
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProjectGuid>{D683203D-D181-4D3E-A42D-CCEB71F77B5D}</ProjectGuid>
+    <OutputType>Exe</OutputType>
+    <RootNamespace>DigitalSmartExam</RootNamespace>
+    <AssemblyName>DigitalSmartExam</AssemblyName>
+    <TargetFrameworkVersion>v4.7.2</TargetFrameworkVersion>
+    <FileAlignment>512</FileAlignment>
+    <AutoGenerateBindingRedirects>true</AutoGenerateBindingRedirects>
+    <Deterministic>true</Deterministic>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <PlatformTarget>AnyCPU</PlatformTarget>
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>bin\Debug\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <PlatformTarget>AnyCPU</PlatformTarget>
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\Release\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <ItemGroup>
+    <None Include="App.config" />
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="admin-results.html" />
+    <Content Include="admin.html" />
+    <Content Include="create-exam.html" />
+    <Content Include="css\style.css" />
+    <Content Include="details.html" />
+    <Content Include="exam.html" />
+    <Content Include="faculty.html" />
+    <Content Include="index.html" />
+    <Content Include="js\admin-results.js" />
+    <Content Include="js\admin.js" />
+    <Content Include="js\auth.js" />
+    <Content Include="js\create-exam.js" />
+    <Content Include="js\exam.js" />
+    <Content Include="js\faculty.js" />
+    <Content Include="js\firebase.js" />
+    <Content Include="js\performance.js" />
+    <Content Include="js\result.js" />
+    <Content Include="js\student.js" />
+    <Content Include="performance.html" />
+    <Content Include="question.html" />
+    <Content Include="questions.html" />
+    <Content Include="result.html" />
+    <Content Include="student.html" />
+  </ItemGroup>
+  <ItemGroup>
+    <Folder Include="image\" />
+  </ItemGroup>
+  <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
+</Project>

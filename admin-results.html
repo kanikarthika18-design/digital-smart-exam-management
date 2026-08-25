@@ -1,0 +1,307 @@
+﻿<!DOCTYPE html>
+<html lang="en">
+
+<head>
+
+    <meta charset="UTF-8">
+
+    <meta name="viewport"
+          content="width=device-width, initial-scale=1.0">
+
+    <title>Student Results</title>
+
+    <link rel="stylesheet"
+          href="css/style.css">
+
+</head>
+
+
+<body>
+
+    <div class="dashboard">
+
+
+        <!-- SIDEBAR -->
+
+        <aside class="sidebar">
+
+            <div class="brand">
+
+                <div class="brand-icon">
+                    🎓
+                </div>
+
+                <div>
+
+                    <h2>
+                        Smart Exam
+                    </h2>
+
+                    <p>
+                        Admin Panel
+                    </p>
+
+                </div>
+
+            </div>
+
+
+            <nav class="sidebar-menu">
+
+                <button class="menu-item"
+                        onclick="goToAdmin()">
+
+                    🏠
+
+                    <span>
+                        Dashboard
+                    </span>
+
+                </button>
+
+
+                <button class="menu-item active">
+
+                    📊
+
+                    <span>
+                        Student Results
+                    </span>
+
+                </button>
+
+
+                <button class="menu-item"
+                        onclick="viewPerformance()">
+
+                    📈
+
+                    <span>
+                        Performance
+                    </span>
+
+                </button>
+
+            </nav>
+
+
+            <button class="logout-btn"
+                    onclick="logout()">
+
+                🚪 Logout
+
+            </button>
+
+        </aside>
+
+
+
+        <!-- MAIN CONTENT -->
+
+        <main class="main-content">
+
+
+            <!-- HEADER -->
+
+            <header class="dashboard-header">
+
+                <div>
+
+                    <p class="header-label">
+                        ADMIN RESULTS
+                    </p>
+
+                    <h1>
+                        Student Results 📊
+                    </h1>
+
+                    <p class="header-subtitle">
+                        Monitor student examination performance
+                    </p>
+
+                </div>
+
+
+                <div class="admin-profile">
+
+                    <div class="profile-icon">
+                        A
+                    </div>
+
+                    <div>
+
+                        <strong>
+                            Admin
+                        </strong>
+
+                        <small>
+                            Exam Administrator
+                        </small>
+
+                    </div>
+
+                </div>
+
+            </header>
+
+
+
+            <!-- SUMMARY CARDS -->
+
+            <section class="stats-grid">
+
+
+                <div class="stat-card">
+
+                    <div class="stat-icon blue">
+                        👨‍🎓
+                    </div>
+
+                    <div>
+
+                        <p>
+                            Exams Completed
+                        </p>
+
+                        <h2 id="totalResults">
+                            0
+                        </h2>
+
+                    </div>
+
+                </div>
+
+
+
+                <div class="stat-card">
+
+                    <div class="stat-icon purple">
+                        📈
+                    </div>
+
+                    <div>
+
+                        <p>
+                            Average Score
+                        </p>
+
+                        <h2 id="averageScore">
+                            0%
+                        </h2>
+
+                    </div>
+
+                </div>
+
+
+
+                <div class="stat-card">
+
+                    <div class="stat-icon green">
+                        ✅
+                    </div>
+
+                    <div>
+
+                        <p>
+                            Passed
+                        </p>
+
+                        <h2 id="passedCount">
+                            0
+                        </h2>
+
+                    </div>
+
+                </div>
+
+
+
+                <div class="stat-card">
+
+                    <div class="stat-icon orange">
+                        ❌
+                    </div>
+
+                    <div>
+
+                        <p>
+                            Failed
+                        </p>
+
+                        <h2 id="failedCount">
+                            0
+                        </h2>
+
+                    </div>
+
+                </div>
+
+            </section>
+
+
+
+            <!-- RESULTS TABLE -->
+
+            <section class="dashboard-card">
+
+                <div class="card-header">
+
+                    <div>
+
+                        <p class="card-label">
+                            EXAMINATION RECORDS
+                        </p>
+
+                        <h2>
+                            Student Performance
+                        </h2>
+
+                    </div>
+
+                    <span class="card-symbol">
+                        📋
+                    </span>
+
+                </div>
+
+
+                <div id="resultsContainer">
+
+                    <p>
+                        Loading results...
+                    </p>
+
+                </div>
+
+
+            </section>
+
+
+
+            <!-- FOOTER -->
+
+            <footer class="dashboard-footer">
+
+                <p>
+                    © 2026 Digital Smart Exam Management System
+                </p>
+
+                <span>
+                    Secure • Smart • Simple
+                </span>
+
+            </footer>
+
+
+        </main>
+
+    </div>
+
+
+
+    <script src="js/admin-results.js"></script>
+
+</body>
+
+</html>

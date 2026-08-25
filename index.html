@@ -1,0 +1,122 @@
+﻿<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+
+    <meta name="viewport"
+          content="width=device-width, initial-scale=1.0">
+
+    <title>Digital Smart Exam - Login</title>
+
+    <link rel="stylesheet"
+          href="css/style.css">
+</head>
+
+<body>
+
+    <div class="login-page">
+
+        <div class="login-card">
+
+            <div class="login-logo">
+                🎓
+            </div>
+
+            <h1>
+                Digital Smart Exam
+            </h1>
+
+            <p class="login-subtitle">
+                Exam Management System
+            </p>
+
+
+            <h2>
+                Login
+            </h2>
+
+
+            <form onsubmit="login(event)">
+
+                <div class="form-group">
+
+                    <label for="role">
+                        Select Role
+                    </label>
+
+                    <select id="role" required>
+
+                        <option value="">
+                            -- Select Role --
+                        </option>
+
+                        <option value="admin">
+                            Admin
+                        </option>
+
+                        <option value="faculty">
+                            Faculty
+                        </option>
+
+                        <option value="student">
+                            Student
+                        </option>
+
+                    </select>
+
+                </div>
+
+
+                <div class="form-group">
+
+                    <label for="username">
+                        Username
+                    </label>
+
+                    <input type="text"
+                           id="username"
+                           placeholder="Enter username"
+                           required>
+
+                </div>
+
+
+                <div class="form-group">
+
+                    <label for="password">
+                        Password
+                    </label>
+
+                    <input type="password"
+                           id="password"
+                           placeholder="Enter password"
+                           required>
+
+                </div>
+
+
+                <button type="submit"
+                        class="login-btn">
+
+                    Login
+
+                </button>
+
+
+                <p id="message"
+                   class="login-message">
+                </p>
+
+            </form>
+
+        </div>
+
+    </div>
+
+
+    <script src="js/auth.js"></script>
+
+</body>
+
+</html>

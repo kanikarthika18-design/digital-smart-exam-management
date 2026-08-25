@@ -1,0 +1,287 @@
+﻿<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>Student Performance</title>
+
+    <link rel="stylesheet" href="css/style.css">
+</head>
+
+<body>
+
+    <div class="dashboard">
+
+        <!-- SIDEBAR -->
+        <aside class="sidebar">
+
+            <div class="brand">
+
+                <div class="brand-icon">
+                    🎓
+                </div>
+
+                <div>
+                    <h2>Smart Exam</h2>
+                    <p>Admin Panel</p>
+                </div>
+
+            </div>
+
+
+            <!-- MENU -->
+            <nav class="sidebar-menu">
+
+                <button class="menu-item"
+                        onclick="goToAdmin()">
+                    🏠
+                    <span>Dashboard</span>
+                </button>
+
+
+                <button class="menu-item"
+                        onclick="createExam()">
+                    📝
+                    <span>Create Exam</span>
+                </button>
+
+
+                <button class="menu-item"
+                        onclick="addQuestions()">
+                    ❓
+                    <span>Add Questions</span>
+                </button>
+
+
+                <button class="menu-item"
+                        onclick="viewResults()">
+                    📊
+                    <span>Student Results</span>
+                </button>
+
+
+                <button class="menu-item active">
+                    📈
+                    <span>Performance</span>
+                </button>
+
+            </nav>
+
+
+            <!-- LOGOUT -->
+            <button class="logout-btn"
+                    onclick="logout()">
+                🚪 Logout
+            </button>
+
+        </aside>
+
+
+        <!-- MAIN CONTENT -->
+        <main class="main-content">
+
+
+            <!-- HEADER -->
+            <header class="dashboard-header">
+
+                <div>
+
+                    <p class="header-label">
+                        PERFORMANCE ANALYSIS
+                    </p>
+
+                    <h1>
+                        Student Performance 📈
+                    </h1>
+
+                    <p class="header-subtitle">
+                        Analyse examination performance
+                    </p>
+
+                </div>
+
+
+                <div class="admin-profile">
+
+                    <div class="profile-icon">
+                        A
+                    </div>
+
+                    <div>
+                        <strong>
+                            Administrator
+                        </strong>
+
+                        <small>
+                            Exam Administrator
+                        </small>
+                    </div>
+
+                </div>
+
+            </header>
+
+
+            <!-- PERFORMANCE CARD -->
+            <section class="content-grid">
+
+                <div class="dashboard-card">
+
+                    <div class="card-header">
+
+                        <div>
+
+                            <p class="card-label">
+                                PERFORMANCE
+                            </p>
+
+                            <h2>
+                                Student Performance
+                            </h2>
+
+                        </div>
+
+                        <span class="card-symbol">
+                            📊
+                        </span>
+
+                    </div>
+
+
+                    <!-- PERFORMANCE DATA -->
+
+                    <div class="analysis-item">
+
+                        <span>
+                            Total Questions
+                        </span>
+
+                        <strong id="totalQuestions">
+                            0
+                        </strong>
+
+                    </div>
+
+
+                    <div class="analysis-item">
+
+                        <span>
+                            Correct Answers
+                        </span>
+
+                        <strong id="correctAnswers">
+                            0
+                        </strong>
+
+                    </div>
+
+
+                    <div class="analysis-item">
+
+                        <span>
+                            Wrong Answers
+                        </span>
+
+                        <strong id="wrongAnswers">
+                            0
+                        </strong>
+
+                    </div>
+
+
+                    <div class="analysis-item">
+
+                        <span>
+                            Percentage
+                        </span>
+
+                        <strong id="percentage">
+                            0%
+                        </strong>
+
+                    </div>
+
+
+                    <div class="analysis-item">
+
+                        <span>
+                            Status
+                        </span>
+
+                        <strong id="status">
+                            -
+                        </strong>
+
+                    </div>
+
+
+                    <div class="analysis-item">
+
+                        <span>
+                            Performance
+                        </span>
+
+                        <strong id="performance">
+                            -
+                        </strong>
+
+                    </div>
+
+
+                    <!-- BACK BUTTON -->
+
+                    <button class="action-card"
+                            onclick="goToAdmin()"
+                            style="
+                        width:100%;
+                        margin-top:25px;
+                        text-align:center;
+                        ">
+
+                        <span>
+                            🏠
+                        </span>
+
+                        <strong>
+                            Back to Dashboard
+                        </strong>
+
+                        <small>
+                            Return to Admin Dashboard
+                        </small>
+
+                    </button>
+
+                </div>
+
+            </section>
+
+
+            <!-- FOOTER -->
+
+            <footer class="dashboard-footer">
+
+                <p>
+                    © 2026 Digital Smart Exam Management System
+                </p>
+
+                <span>
+                    Secure • Smart • Simple
+                </span>
+
+            </footer>
+
+        </main>
+
+    </div>
+
+
+    <!-- JAVASCRIPT -->
+
+    <script src="js/performance.js"></script>
+
+</body>
+
+</html>

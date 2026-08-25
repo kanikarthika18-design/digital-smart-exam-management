@@ -1,0 +1,463 @@
+﻿<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>Smart Admin Dashboard</title>
+
+    <link rel="stylesheet" href="css/style.css">
+</head>
+
+<body>
+
+    <div class="dashboard">
+
+        <!-- SIDEBAR -->
+        <aside class="sidebar">
+
+            <div class="brand">
+
+                <div class="brand-icon">
+                    🎓
+                </div>
+
+                <div>
+                    <h2>Smart Exam</h2>
+                    <p>Management System</p>
+                </div>
+
+            </div>
+
+
+            <nav class="sidebar-menu">
+
+                <!-- DASHBOARD -->
+                <button class="menu-item active"
+                        onclick="goToAdmin()">
+
+                    🏠
+                    <span>Dashboard</span>
+
+                </button>
+
+
+                <!-- CREATE EXAM -->
+                <button class="menu-item"
+                        onclick="createExam()">
+
+                    📝
+                    <span>Create Exam</span>
+
+                </button>
+
+
+                <!-- ADD QUESTIONS -->
+                <button class="menu-item"
+                        onclick="addQuestions()">
+
+                    ❓
+                    <span>Add Questions</span>
+
+                </button>
+
+
+                <!-- VIEW RESULTS -->
+                <button class="menu-item"
+                        onclick="viewResults()">
+
+                    📊
+                    <span>View Results</span>
+
+                </button>
+
+
+                <!-- PERFORMANCE -->
+                <button class="menu-item"
+                        onclick="viewPerformance()">
+
+                    📈
+                    <span>Performance</span>
+
+                </button>
+
+            </nav>
+
+
+            <!-- LOGOUT -->
+            <button class="logout-btn"
+                    onclick="logout()">
+
+                🚪 Logout
+
+            </button>
+
+        </aside>
+
+
+        <!-- MAIN CONTENT -->
+        <main class="main-content">
+
+
+            <!-- HEADER -->
+            <header class="dashboard-header">
+
+                <div>
+
+                    <p class="header-label">
+                        ADMIN DASHBOARD
+                    </p>
+
+                    <h1 id="welcomeAdmin">
+                        Welcome, Admin 👋
+                    </h1>
+
+                    <p class="header-subtitle">
+                        Manage your digital examination system
+                    </p>
+
+                </div>
+
+
+                <div class="admin-profile">
+
+                    <div class="profile-icon">
+                        A
+                    </div>
+
+                    <div>
+
+                        <strong>
+                            Administrator
+                        </strong>
+
+                        <small>
+                            System Manager
+                        </small>
+
+                    </div>
+
+                </div>
+
+            </header>
+
+
+            <!-- STAT CARDS -->
+            <section class="stats-grid">
+
+
+                <!-- TOTAL QUESTIONS -->
+                <div class="stat-card">
+
+                    <div class="stat-icon blue">
+                        📝
+                    </div>
+
+                    <div>
+
+                        <p>
+                            Total Questions
+                        </p>
+
+                        <h2 id="totalQuestions">
+                            0
+                        </h2>
+
+                    </div>
+
+                </div>
+
+
+                <!-- TOTAL EXAMS -->
+                <div class="stat-card">
+
+                    <div class="stat-icon purple">
+                        🎯
+                    </div>
+
+                    <div>
+
+                        <p>
+                            Total Exams
+                        </p>
+
+                        <h2 id="totalExams">
+                            0
+                        </h2>
+
+                    </div>
+
+                </div>
+
+
+                <!-- AVERAGE PERFORMANCE -->
+                <div class="stat-card">
+
+                    <div class="stat-icon green">
+                        📈
+                    </div>
+
+                    <div>
+
+                        <p>
+                            Average Performance
+                        </p>
+
+                        <h2 id="averagePerformance">
+                            0%
+                        </h2>
+
+                    </div>
+
+                </div>
+
+
+                <!-- PASS / FAIL -->
+                <div class="stat-card">
+
+                    <div class="stat-icon orange">
+                        🏆
+                    </div>
+
+                    <div>
+
+                        <p>
+                            Pass / Fail
+                        </p>
+
+                        <h2 id="passFail">
+                            0 Pass / 0 Fail
+                        </h2>
+
+                    </div>
+
+                </div>
+
+            </section>
+
+
+            <!-- CONTENT GRID -->
+            <section class="content-grid">
+
+
+                <!-- SMART ANALYSIS -->
+                <div class="dashboard-card">
+
+                    <div class="card-header">
+
+                        <div>
+
+                            <p class="card-label">
+                                ANALYTICS
+                            </p>
+
+                            <h2>
+                                Smart Performance Analysis
+                            </h2>
+
+                        </div>
+
+                        <span class="card-symbol">
+                            📊
+                        </span>
+
+                    </div>
+
+
+                    <div class="analysis-row">
+
+
+                        <div class="analysis-item">
+
+                            <span>
+                                Highest Score
+                            </span>
+
+                            <strong id="highestScore">
+                                0%
+                            </strong>
+
+                        </div>
+
+
+                        <div class="analysis-item">
+
+                            <span>
+                                Subject Performance
+                            </span>
+
+                            <strong id="subjectPerformance">
+                                No performance data available
+                            </strong>
+
+                        </div>
+
+
+                        <div class="analysis-item">
+
+                            <span>
+                                Improvement Trend
+                            </span>
+
+                            <strong id="improvementTrend">
+                                No trend data available
+                            </strong>
+
+                        </div>
+
+                    </div>
+
+                </div>
+
+
+                <!-- QUICK ACTIONS -->
+                <div class="dashboard-card">
+
+                    <div class="card-header">
+
+                        <div>
+
+                            <p class="card-label">
+                                MANAGEMENT
+                            </p>
+
+                            <h2>
+                                Quick Actions
+                            </h2>
+
+                        </div>
+
+                        <span class="card-symbol">
+                            ⚡
+                        </span>
+
+                    </div>
+
+
+                    <div class="action-grid">
+
+
+                        <!-- CREATE EXAM -->
+                        <button class="action-card"
+                                onclick="createExam()">
+
+                            <span>
+                                ➕
+                            </span>
+
+                            <strong>
+                                Create Exam
+                            </strong>
+
+                            <small>
+                                Create a new examination
+                            </small>
+
+                        </button>
+
+
+                        <!-- ADD QUESTIONS -->
+                        <button class="action-card"
+                                onclick="addQuestions()">
+
+                            <span>
+                                ❓
+                            </span>
+
+                            <strong>
+                                Add Questions
+                            </strong>
+
+                            <small>
+                                Manage exam questions
+                            </small>
+
+                        </button>
+
+
+                        <!-- VIEW RESULTS -->
+                        <button class="action-card"
+                                onclick="viewResults()">
+
+                            <span>
+                                📊
+                            </span>
+
+                            <strong>
+                                View Results
+                            </strong>
+
+                            <small>
+                                Check student results
+                            </small>
+
+                        </button>
+
+
+                        <!-- PERFORMANCE -->
+                        <button class="action-card"
+                                onclick="viewPerformance()">
+
+                            <span>
+                                📈
+                            </span>
+
+                            <strong>
+                                Performance
+                            </strong>
+
+                            <small>
+                                Analyse performance
+                            </small>
+
+                        </button>
+
+
+                    </div>
+
+
+                    <!-- EXPORT TO EXCEL -->
+                    <div class="export-section">
+
+                        <button class="export-excel-btn"
+                                onclick="exportToExcel()">
+
+                            📥 Export Student Results to Excel
+
+                        </button>
+
+                    </div>
+
+
+                </div>
+
+            </section>
+
+
+            <!-- FOOTER -->
+            <footer class="dashboard-footer">
+
+                <p>
+                    © 2026 Digital Smart Exam Management System
+                </p>
+
+                <span>
+                    Secure • Smart • Simple
+                </span>
+
+            </footer>
+
+        </main>
+
+    </div>
+
+
+    <!-- JAVASCRIPT -->
+    <script 
+    src="https://cdn.jsdelivr.net/npm/xlsx/dist/xlsx.full.min.js"></script>
+    <script src="js/admin.js"></script>
+
+</body>
+
+</html>

@@ -1,0 +1,340 @@
+﻿<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>Smart Question Bank</title>
+
+    <link rel="stylesheet" href="css/style.css">
+</head>
+
+<body>
+
+    <div class="dashboard">
+
+        <!-- SIDEBAR -->
+        <aside class="sidebar">
+
+            <div class="logo">
+                <h2>Digital Smart</h2>
+                <p>Exam Management</p>
+            </div>
+
+            <nav class="menu">
+
+                <a href="admin.html">
+                    🏠 Dashboard
+                </a>
+
+                <a href="create-exam.html">
+                    📝 Create Exam
+                </a>
+
+                <a href="question.html" class="active">
+                    ❓ Add Questions
+                </a>
+
+                <a href="results.html">
+                    📊 View Results
+                </a>
+
+                <a href="performance.html">
+                    📈 Performance
+                </a>
+
+                <a href="#" onclick="logout()">
+                    🚪 Logout
+                </a>
+
+            </nav>
+
+        </aside>
+
+
+        <!-- MAIN CONTENT -->
+        <main class="main-content">
+
+            <!-- HEADER -->
+            <header class="page-header">
+
+                <div>
+                    <h1>Smart Question Bank</h1>
+                    <p>Add and manage exam questions</p>
+                </div>
+
+            </header>
+
+
+            <!-- ADD QUESTION CARD -->
+            <section class="question-form-card">
+
+                <div class="section-title">
+                    <h2>Add New Question</h2>
+                    <p>Enter the question details below</p>
+                </div>
+
+
+                <form onsubmit="addQuestion(); return false;">
+
+                    <!-- SUBJECT + TOPIC -->
+                    <div class="form-row">
+
+                        <div class="form-group">
+
+                            <label for="subject">
+                                Subject
+                            </label>
+
+                            <select id="subject" required>
+
+                                <option value="">
+                                    -- Select Subject --
+                                </option>
+
+                                <option value="Computer Science">
+                                    Computer Science
+                                </option>
+
+                                <option value="Mathematics">
+                                    Mathematics
+                                </option>
+
+                                <option value="Physics">
+                                    Physics
+                                </option>
+
+                                <option value="Chemistry">
+                                    Chemistry
+                                </option>
+
+                            </select>
+
+                        </div>
+
+
+                        <div class="form-group">
+
+                            <label for="topic">
+                                Topic
+                            </label>
+
+                            <input type="text"
+                                   id="topic"
+                                   placeholder="Enter topic"
+                                   required>
+
+                        </div>
+
+                    </div>
+
+
+                    <!-- DIFFICULTY -->
+                    <div class="form-group">
+
+                        <label for="difficulty">
+                            Difficulty Level
+                        </label>
+
+                        <select id="difficulty" required>
+
+                            <option value="">
+                                -- Select Level --
+                            </option>
+
+                            <option value="Easy">
+                                Easy
+                            </option>
+
+                            <option value="Medium">
+                                Medium
+                            </option>
+
+                            <option value="Hard">
+                                Hard
+                            </option>
+
+                        </select>
+
+                    </div>
+
+
+                    <!-- QUESTION -->
+                    <div class="form-group">
+
+                        <label for="question">
+                            Question
+                        </label>
+
+                        <textarea id="question"
+                                  rows="4"
+                                  placeholder="Enter your question"
+                                  required></textarea>
+
+                    </div>
+
+
+                    <!-- OPTIONS -->
+                    <div class="form-row">
+
+                        <div class="form-group">
+
+                            <label for="optionA">
+                                Option A
+                            </label>
+
+                            <input type="text"
+                                   id="optionA"
+                                   placeholder="Enter option A"
+                                   required>
+
+                        </div>
+
+
+                        <div class="form-group">
+
+                            <label for="optionB">
+                                Option B
+                            </label>
+
+                            <input type="text"
+                                   id="optionB"
+                                   placeholder="Enter option B"
+                                   required>
+
+                        </div>
+
+                    </div>
+
+
+                    <div class="form-row">
+
+                        <div class="form-group">
+
+                            <label for="optionC">
+                                Option C
+                            </label>
+
+                            <input type="text"
+                                   id="optionC"
+                                   placeholder="Enter option C"
+                                   required>
+
+                        </div>
+
+
+                        <div class="form-group">
+
+                            <label for="optionD">
+                                Option D
+                            </label>
+
+                            <input type="text"
+                                   id="optionD"
+                                   placeholder="Enter option D"
+                                   required>
+
+                        </div>
+
+                    </div>
+
+
+                    <!-- CORRECT ANSWER -->
+                    <div class="form-group">
+
+                        <label for="correctAnswer">
+                            Correct Answer
+                        </label>
+
+                        <select id="correctAnswer" required>
+
+                            <option value="">
+                                -- Select Correct Answer --
+                            </option>
+
+                            <option value="A">
+                                Option A
+                            </option>
+
+                            <option value="B">
+                                Option B
+                            </option>
+
+                            <option value="C">
+                                Option C
+                            </option>
+
+                            <option value="D">
+                                Option D
+                            </option>
+
+                        </select>
+
+                    </div>
+
+
+                    <!-- MESSAGE -->
+                    <p id="message" class="form-message"></p>
+
+
+                    <!-- BUTTON -->
+                    <div class="form-actions">
+
+                        <button type="submit"
+                                class="primary-btn">
+                            + Add Question
+                        </button>
+
+                    </div>
+
+                </form>
+
+            </section>
+
+
+            <!-- QUESTION LIST -->
+            <section class="question-list-section">
+
+                <div class="section-title">
+
+                    <h2>Existing Questions</h2>
+
+                    <p>
+                        Questions already added to the question bank
+                    </p>
+
+                </div>
+
+                <div id="questionList" class="question-list">
+
+                </div>
+
+            </section>
+
+        </main>
+
+    </div>
+
+
+    <!-- ADMIN JS -->
+    <script src="js/admin.js"></script>
+
+
+    <!-- LOAD QUESTIONS -->
+    <script>
+
+        window.addEventListener(
+            "DOMContentLoaded",
+            function () {
+
+                displayQuestions();
+
+            }
+        );
+
+    </script>
+    <script src="js/admin.js"></script>
+</body>
+
+</html>

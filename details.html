@@ -1,0 +1,62 @@
+﻿<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Exam Details</title>
+    <link rel="stylesheet" href="css/style.css">
+</head>
+
+<body>
+
+    <div class="login-container">
+
+        <h1>Exam Details</h1>
+        <p>Digital Smart Exam Management System</p>
+
+        <div class="login-box">
+
+            <h2>Created Exam</h2>
+
+            <p id="examName">Exam Name: -</p>
+            <p id="subject">Subject: -</p>
+            <p id="duration">Duration: -</p>
+            <p id="questionCount">Questions: -</p>
+
+            <br>
+
+            <button onclick="goBack()">
+                Back to Admin Dashboard
+            </button>
+
+        </div>
+
+    </div>
+
+    <script>
+    const exam = JSON.parse(localStorage.getItem("examDetails"));
+
+    if (exam) {
+        document.getElementById("examName").innerText =
+            "Exam Name: " + (exam.name || "Not available");
+
+        document.getElementById("subject").innerText =
+            "Subject: " + (exam.subject || "Not available");
+
+        document.getElementById("duration").innerText =
+            "Duration: " + (exam.duration || "Not available");
+
+        const questions =
+            JSON.parse(localStorage.getItem("questions")) || [];
+
+        document.getElementById("questionCount").innerText =
+            "Questions: " + questions.length;
+    }
+
+    function goBack() {
+        window.location.href = "admin.html";
+    }
+    </script>
+
+</body>
+</html>

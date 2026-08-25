@@ -1,0 +1,236 @@
+﻿<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>Student Results</title>
+
+    <link rel="stylesheet" href="css/style.css">
+</head>
+
+<body>
+
+    <div class="dashboard">
+
+        <!-- SIDEBAR -->
+        <aside class="sidebar">
+
+            <div class="brand">
+
+                <div class="brand-icon">
+                    🎓
+                </div>
+
+                <div>
+                    <h2>Smart Exam</h2>
+                    <p>Admin Panel</p>
+                </div>
+
+            </div>
+
+
+            <nav class="sidebar-menu">
+
+                <button class="menu-item"
+                        onclick="goToAdmin()">
+                    🏠
+                    <span>Dashboard</span>
+                </button>
+
+
+                <button class="menu-item"
+                        onclick="createExam()">
+                    📝
+                    <span>Create Exam</span>
+                </button>
+
+
+                <button class="menu-item"
+                        onclick="addQuestions()">
+                    ❓
+                    <span>Add Questions</span>
+                </button>
+
+
+                <button class="menu-item active">
+                    📊
+                    <span>Student Results</span>
+                </button>
+
+
+                <button class="menu-item"
+                        onclick="viewPerformance()">
+                    📈
+                    <span>Performance</span>
+                </button>
+
+            </nav>
+
+
+            <button class="logout-btn"
+                    onclick="logout()">
+                🚪 Logout
+            </button>
+
+        </aside>
+
+
+        <!-- MAIN CONTENT -->
+        <main class="main-content">
+
+
+            <!-- HEADER -->
+            <header class="dashboard-header">
+
+                <div>
+
+                    <p class="header-label">
+                        ADMIN RESULTS
+                    </p>
+
+                    <h1>
+                        Student Results 📊
+                    </h1>
+
+                    <p class="header-subtitle">
+                        Monitor student examination performance
+                    </p>
+
+                </div>
+
+
+                <div class="admin-profile">
+
+                    <div class="profile-icon">
+                        A
+                    </div>
+
+                    <div>
+                        <strong>Administrator</strong>
+                        <small>Exam Administrator</small>
+                    </div>
+
+                </div>
+
+            </header>
+
+
+
+            <!-- RESULTS CARD -->
+            <section class="content-grid">
+
+                <div class="dashboard-card"
+                     style="width:100%;">
+
+                    <div class="card-header">
+
+                        <div>
+
+                            <p class="card-label">
+                                EXAM RESULTS
+                            </p>
+
+                            <h2>
+                                Student Examination Results
+                            </h2>
+
+                        </div>
+
+                        <span class="card-symbol">
+                            🏆
+                        </span>
+
+                    </div>
+
+
+                    <!-- RESULTS CONTAINER -->
+                    <div id="resultsContainer">
+
+                        <p style="
+                        text-align:center;
+                        padding:40px;
+                        color:#6b7280;
+                    ">
+                            Loading results...
+                        </p>
+
+                    </div>
+
+
+                </div>
+
+            </section>
+
+
+
+            <!-- FOOTER -->
+            <footer class="dashboard-footer">
+
+                <p>
+                    © 2026 Digital Smart Exam Management System
+                </p>
+
+                <span>
+                    Secure • Smart • Simple
+                </span>
+
+            </footer>
+
+
+        </main>
+
+    </div>
+
+
+
+    <script src="js/results.js"></script>
+
+
+    <script>
+
+        function goToAdmin() {
+
+            window.location.href = "admin.html";
+
+        }
+
+
+        function createExam() {
+
+            window.location.href = "exam.html";
+
+        }
+
+
+        function addQuestions() {
+
+            window.location.href = "questions.html";
+
+        }
+
+
+        function viewPerformance() {
+
+            window.location.href = "performance.html";
+
+        }
+
+
+        function logout() {
+
+            localStorage.removeItem("loggedInUser");
+
+            localStorage.removeItem("userRole");
+
+            window.location.href = "index.html";
+
+        }
+
+    </script>
+
+
+</body>
+
+</html>
