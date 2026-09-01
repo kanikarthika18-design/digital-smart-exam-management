@@ -1,122 +1,359 @@
-﻿<!DOCTYPE html>
+<!DOCTYPE html>
 <html lang="en">
 
 <head>
     <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Digital Smart Exam Management System</title>
 
-    <meta name="viewport"
-          content="width=device-width, initial-scale=1.0">
+    <style>
+        * {
+            box-sizing: border-box;
+            margin: 0;
+            padding: 0;
+            font-family: Arial, sans-serif;
+        }
 
-    <title>Digital Smart Exam - Login</title>
+        body {
+            min-height: 100vh;
+            background: #eef4ff;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            padding: 20px;
+        }
 
-    <link rel="stylesheet"
-          href="css/style.css">
+        .box {
+            width: 100%;
+            max-width: 950px;
+            min-height: 580px;
+            background: white;
+            border-radius: 22px;
+            overflow: hidden;
+            display: grid;
+            grid-template-columns: 45% 55%;
+            box-shadow: 0 20px 60px rgba(0,0,0,0.12);
+        }
+
+        .left {
+            background: linear-gradient(135deg, #172554, #2563eb);
+            color: white;
+            padding: 55px 45px;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+        }
+
+        .logo {
+            width: 65px;
+            height: 65px;
+            background: rgba(255,255,255,0.15);
+            border-radius: 17px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 30px;
+            margin-bottom: 25px;
+        }
+
+        .left h1 {
+            font-size: 34px;
+            line-height: 1.2;
+            margin-bottom: 18px;
+        }
+
+        .left p {
+            color: #dbeafe;
+            line-height: 1.7;
+            font-size: 14px;
+        }
+
+        .features {
+            margin-top: 30px;
+        }
+
+        .feature {
+            margin: 13px 0;
+            font-size: 14px;
+            color: #eff6ff;
+        }
+
+        .right {
+            padding: 55px;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+        }
+
+            .right h2 {
+                font-size: 29px;
+                color: #0f172a;
+                margin-bottom: 8px;
+            }
+
+        .subtitle {
+            color: #64748b;
+            font-size: 14px;
+            margin-bottom: 28px;
+        }
+
+        .roles {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 10px;
+            margin-bottom: 25px;
+        }
+
+        .role {
+            padding: 13px 5px;
+            border: 1px solid #dbe2ea;
+            background: #f8fafc;
+            border-radius: 10px;
+            cursor: pointer;
+            font-weight: bold;
+            color: #475569;
+        }
+
+            .role.active {
+                background: #2563eb;
+                color: white;
+                border-color: #2563eb;
+            }
+
+        label {
+            display: block;
+            font-size: 13px;
+            font-weight: bold;
+            color: #334155;
+            margin-bottom: 7px;
+        }
+
+        input {
+            width: 100%;
+            height: 48px;
+            border: 1px solid #dbe2ea;
+            border-radius: 10px;
+            padding: 0 14px;
+            font-size: 14px;
+            outline: none;
+            margin-bottom: 18px;
+        }
+
+            input:focus {
+                border-color: #2563eb;
+                box-shadow: 0 0 0 3px rgba(37,99,235,0.1);
+            }
+
+        .login {
+            width: 100%;
+            height: 50px;
+            border: none;
+            border-radius: 10px;
+            background: #2563eb;
+            color: white;
+            font-size: 15px;
+            font-weight: bold;
+            cursor: pointer;
+        }
+
+            .login:hover {
+                background: #1d4ed8;
+            }
+
+        .secure {
+            text-align: center;
+            color: #64748b;
+            font-size: 12px;
+            margin-top: 18px;
+        }
+
+        .footer {
+            text-align: center;
+            color: #94a3b8;
+            font-size: 11px;
+            margin-top: 20px;
+        }
+
+        @media(max-width: 750px) {
+            .box {
+                grid-template-columns: 1fr;
+            }
+
+            .left {
+                padding: 35px;
+            }
+
+            .features {
+                display: none;
+            }
+
+            .right {
+                padding: 35px;
+            }
+        }
+    </style>
 </head>
 
 <body>
 
-    <div class="login-page">
+    <div class="box">
 
-        <div class="login-card">
+        <div class="left">
 
-            <div class="login-logo">
-                🎓
-            </div>
+            <div class="logo">🎓</div>
 
             <h1>
-                Digital Smart Exam
+                Digital Smart<br>
+                Exam Management
             </h1>
 
-            <p class="login-subtitle">
-                Exam Management System
+            <p>
+                A modern digital platform for managing
+                examinations, students, faculty, questions
+                and results efficiently.
+            </p>
+
+            <div class="features">
+                <div class="feature">✓ Smart Online Examination</div>
+                <div class="feature">✓ Automatic Result Evaluation</div>
+                <div class="feature">✓ Question Bank Management</div>
+                <div class="feature">✓ Student Performance Analysis</div>
+            </div>
+
+        </div>
+
+
+        <div class="right">
+
+            <h2>Welcome Back 👋</h2>
+
+            <p class="subtitle">
+                Select your role and login to continue
             </p>
 
 
-            <h2>
-                Login
-            </h2>
+            <div class="roles">
+
+                <button class="role active"
+                        onclick="selectRole('admin', this)">
+                    Admin
+                </button>
+
+                <button class="role"
+                        onclick="selectRole('faculty', this)">
+                    Faculty
+                </button>
+
+                <button class="role"
+                        onclick="selectRole('student', this)">
+                    Student
+                </button>
+
+            </div>
 
 
             <form onsubmit="login(event)">
 
-                <div class="form-group">
+                <label>Username</label>
 
-                    <label for="role">
-                        Select Role
-                    </label>
-
-                    <select id="role" required>
-
-                        <option value="">
-                            -- Select Role --
-                        </option>
-
-                        <option value="admin">
-                            Admin
-                        </option>
-
-                        <option value="faculty">
-                            Faculty
-                        </option>
-
-                        <option value="student">
-                            Student
-                        </option>
-
-                    </select>
-
-                </div>
+                <input type="text"
+                       id="username"
+                       placeholder="Enter username"
+                       required>
 
 
-                <div class="form-group">
+                <label>Password</label>
 
-                    <label for="username">
-                        Username
-                    </label>
-
-                    <input type="text"
-                           id="username"
-                           placeholder="Enter username"
-                           required>
-
-                </div>
-
-
-                <div class="form-group">
-
-                    <label for="password">
-                        Password
-                    </label>
-
-                    <input type="password"
-                           id="password"
-                           placeholder="Enter password"
-                           required>
-
-                </div>
+                <input type="password"
+                       id="password"
+                       placeholder="Enter password"
+                       required>
 
 
                 <button type="submit"
-                        class="login-btn">
-
-                    Login
-
+                        class="login">
+                    Sign In →
                 </button>
 
-
-                <p id="message"
-                   class="login-message">
-                </p>
-
             </form>
+
+
+            <div class="secure">
+                🔒 Secure Digital Examination Portal
+            </div>
+
+            <div class="footer">
+                © 2026 Digital Smart Exam Management System
+            </div>
 
         </div>
 
     </div>
 
 
-    <script src="js/auth.js"></script>
+    <script>
+
+        let selectedRole = "admin";
+
+
+        function selectRole(role, button) {
+
+            selectedRole = role;
+
+            document
+                .querySelectorAll(".role")
+                .forEach(function (btn) {
+                    btn.classList.remove("active");
+                });
+
+            button.classList.add("active");
+        }
+
+
+        function login(event) {
+
+            event.preventDefault();
+
+            let username =
+                document.getElementById("username").value;
+
+            let password =
+                document.getElementById("password").value;
+
+
+            if (username === "" || password === "") {
+                alert("Please enter username and password");
+                return;
+            }
+
+
+            localStorage.setItem(
+                "loggedInUser",
+                username
+            );
+
+            localStorage.setItem(
+                "userRole",
+                selectedRole
+            );
+
+
+            if (selectedRole === "admin") {
+                window.location.href = "admin.html";
+            }
+
+            else if (selectedRole === "faculty") {
+                window.location.href = "faculty.html";
+            }
+
+            else if (selectedRole === "student") {
+                window.location.href = "student.html";
+            }
+
+        }
+
+    </script>
 
 </body>
 
-</html>
+</html> 
