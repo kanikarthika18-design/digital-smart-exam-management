@@ -3147,3 +3147,60 @@ body {
         width: 100%;
     }
 }
+
+/* ================= QUICK ACTION GRID ================= */
+
+.action-grid {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 12px;
+}
+
+.action-grid .action-card {
+    width: 100%;
+    border: 1px solid #e2e8f0;
+    background: #f8fafc;
+    text-align: left;
+}
+
+
+/* ================= EXPORT SECTION ================= */
+
+.export-section {
+    margin-top: 18px;
+    padding-top: 18px;
+    border-top: 1px solid #e2e8f0;
+}
+
+.export-excel-btn {
+    width: 100%;
+    padding: 13px 16px;
+
+    border: none;
+    border-radius: 10px;
+
+    background: #16a34a;
+    color: white;
+
+    font-size: 13px;
+    font-weight: 600;
+
+    cursor: pointer;
+    transition: 0.2s ease;
+}
+
+.export-excel-btn:hover {
+    background: #15803d;
+    transform: translateY(-1px);
+}
+
+
+/* ================= MOBILE ================= */
+
+@media (max-width: 650px) {
+
+    .action-grid {
+        grid-template-columns: 1fr;
+    }
+
+}
