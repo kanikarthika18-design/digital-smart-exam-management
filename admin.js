@@ -30,7 +30,7 @@ function addQuestions() {
 // =====================================
 
 function viewResults() {
-    window.location.href = "results.html";
+    window.location.href = "result.html";
 }
 
 
