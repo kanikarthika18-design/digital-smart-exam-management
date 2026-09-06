@@ -21,7 +21,7 @@ function createExam() {
 // =====================================
 
 function addQuestions() {
-    window.location.href = "questions.html";
+    window.location.href = "question.html";
 }
 
 
