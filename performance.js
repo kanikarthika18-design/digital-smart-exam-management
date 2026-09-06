@@ -1,4 +1,4 @@
-﻿// =====================================
+// =====================================
 // PERFORMANCE PAGE
 // =====================================
 
@@ -45,7 +45,7 @@ function loadPerformance() {
 
     const result =
         performanceData[
-        performanceData.length - 1
+            performanceData.length - 1
         ];
 
 
@@ -144,7 +144,7 @@ function goToAdmin() {
 
 function createExam() {
 
-    window.location.href = "exam.html";
+    window.location.href = "create-exam.html";
 
 }
 
@@ -155,7 +155,7 @@ function createExam() {
 
 function addQuestions() {
 
-    window.location.href = "questions.html";
+    window.location.href = "question.html";
 
 }
 
@@ -166,7 +166,7 @@ function addQuestions() {
 
 function viewResults() {
 
-    window.location.href = "results.html";
+    window.location.href = "result.html";
 
 }
 
