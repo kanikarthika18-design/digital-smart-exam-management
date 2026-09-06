@@ -71,7 +71,7 @@
 
             <!-- LOGOUT -->
             <button class="logout-btn"
-                    onclick="logout()">
+            onclick="localStorage.removeItem('loggedInUser'); localStorage.removeItem('userRole'); window.location.href='index.html';">
                 🚪 Logout
             </button>
 
