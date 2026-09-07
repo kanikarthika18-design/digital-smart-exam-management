@@ -1,4 +1,4 @@
-﻿// =====================================
+// =====================================
 // ADMIN DASHBOARD NAVIGATION
 // =====================================
 
@@ -63,29 +63,15 @@ function logout() {
 
 function addQuestion() {
 
-    const subject =
-        document.getElementById("subject").value.trim();
+    const subject = document.getElementById("subject").value.trim();
+    const topic = document.getElementById("topic").value.trim();
+    const difficulty = document.getElementById("difficulty").value;
+    const question = document.getElementById("question").value.trim();
 
-    const topic =
-        document.getElementById("topic").value.trim();
-
-    const difficulty =
-        document.getElementById("difficulty").value;
-
-    const question =
-        document.getElementById("question").value.trim();
-
-    const optionA =
-        document.getElementById("optionA").value.trim();
-
-    const optionB =
-        document.getElementById("optionB").value.trim();
-
-    const optionC =
-        document.getElementById("optionC").value.trim();
-
-    const optionD =
-        document.getElementById("optionD").value.trim();
+    const optionA = document.getElementById("optionA").value.trim();
+    const optionB = document.getElementById("optionB").value.trim();
+    const optionC = document.getElementById("optionC").value.trim();
+    const optionD = document.getElementById("optionD").value.trim();
 
     const correctAnswer =
         document.getElementById("correctAnswer").value;
@@ -111,7 +97,6 @@ function addQuestion() {
     ) {
 
         if (message) {
-
             message.innerText =
                 "Please fill all question details.";
 
@@ -127,9 +112,7 @@ function addQuestion() {
     // =====================================
 
     let questions =
-        JSON.parse(
-            localStorage.getItem("questions")
-        ) || [];
+        JSON.parse(localStorage.getItem("questions")) || [];
 
 
     // =====================================
@@ -157,7 +140,6 @@ function addQuestion() {
         optionD: optionD,
 
         correctAnswer: correctAnswer
-
     };
 
 
@@ -178,15 +160,10 @@ function addQuestion() {
     // =====================================
 
     const currentExamId =
-        Number(
-            localStorage.getItem("currentExamId")
-        );
-
+        Number(localStorage.getItem("currentExamId"));
 
     let exams =
-        JSON.parse(
-            localStorage.getItem("exams")
-        ) || [];
+        JSON.parse(localStorage.getItem("exams")) || [];
 
 
     // =====================================
@@ -246,23 +223,16 @@ function addQuestion() {
     // =====================================
 
     document.getElementById("subject").value = "";
-
     document.getElementById("topic").value = "";
-
     document.getElementById("difficulty").value = "";
-
     document.getElementById("question").value = "";
 
     document.getElementById("optionA").value = "";
-
     document.getElementById("optionB").value = "";
-
     document.getElementById("optionC").value = "";
-
     document.getElementById("optionD").value = "";
 
     document.getElementById("correctAnswer").value = "";
-
 }
 
 
@@ -273,29 +243,19 @@ function addQuestion() {
 function loadAdminDashboard() {
 
     const questions =
-        JSON.parse(
-            localStorage.getItem("questions")
-        ) || [];
-
+        JSON.parse(localStorage.getItem("questions")) || [];
 
     const data =
-        JSON.parse(
-            localStorage.getItem("performanceData")
-        ) || [];
-
+        JSON.parse(localStorage.getItem("performanceData")) || [];
 
     const totalQuestions =
         questions.length;
 
-
     const totalExams =
         data.length;
 
-
     let averagePerformance = 0;
-
     let passCount = 0;
-
     let failCount = 0;
 
 
@@ -306,18 +266,12 @@ function loadAdminDashboard() {
     if (data.length > 0) {
 
         const totalPercentage =
-            data.reduce(function (
-                sum,
-                result
-            ) {
+            data.reduce(function (sum, result) {
 
                 return sum +
-                    Number(
-                        result.percentage || 0
-                    );
+                    Number(result.percentage || 0);
 
             }, 0);
-
 
         averagePerformance =
             totalPercentage / data.length;
@@ -326,16 +280,14 @@ function loadAdminDashboard() {
         passCount =
             data.filter(function (result) {
 
-                return String(
-                    result.status
-                ).toUpperCase() === "PASS";
+                return String(result.status)
+                    .toUpperCase() === "PASS";
 
             }).length;
 
 
         failCount =
             data.length - passCount;
-
     }
 
 
@@ -344,34 +296,22 @@ function loadAdminDashboard() {
     // =====================================
 
     const totalQuestionsElement =
-        document.getElementById(
-            "totalQuestions"
-        );
-
+        document.getElementById("totalQuestions");
 
     const totalExamsElement =
-        document.getElementById(
-            "totalExams"
-        );
-
+        document.getElementById("totalExams");
 
     const averagePerformanceElement =
-        document.getElementById(
-            "averagePerformance"
-        );
-
+        document.getElementById("averagePerformance");
 
     const passFailElement =
-        document.getElementById(
-            "passFail"
-        );
+        document.getElementById("passFail");
 
 
     if (totalQuestionsElement) {
 
         totalQuestionsElement.innerText =
             totalQuestions;
-
     }
 
 
@@ -379,27 +319,21 @@ function loadAdminDashboard() {
 
         totalExamsElement.innerText =
             totalExams;
-
     }
 
 
     if (averagePerformanceElement) {
 
         averagePerformanceElement.innerText =
-            averagePerformance.toFixed(2) +
-            "%";
-
+            averagePerformance.toFixed(2) + "%";
     }
 
 
     if (passFailElement) {
 
         passFailElement.innerText =
-            passCount +
-            " Pass / " +
-            failCount +
-            " Fail";
-
+            passCount + " Pass / " +
+            failCount + " Fail";
     }
 
 
@@ -408,9 +342,7 @@ function loadAdminDashboard() {
     // =====================================
 
     const highestScoreElement =
-        document.getElementById(
-            "highestScore"
-        );
+        document.getElementById("highestScore");
 
 
     if (highestScoreElement) {
@@ -428,9 +360,7 @@ function loadAdminDashboard() {
                         );
 
                     })
-
                 );
-
 
             highestScoreElement.innerText =
                 highest.toFixed(2) + "%";
@@ -448,9 +378,7 @@ function loadAdminDashboard() {
     // =====================================
 
     const subjectElement =
-        document.getElementById(
-            "subjectPerformance"
-        );
+        document.getElementById("subjectPerformance");
 
 
     if (subjectElement) {
@@ -475,9 +403,7 @@ function loadAdminDashboard() {
     // =====================================
 
     const trendElement =
-        document.getElementById(
-            "improvementTrend"
-        );
+        document.getElementById("improvementTrend");
 
 
     if (trendElement) {
@@ -485,10 +411,7 @@ function loadAdminDashboard() {
         if (data.length >= 2) {
 
             const first =
-                Number(
-                    data[0].percentage || 0
-                );
-
+                Number(data[0].percentage || 0);
 
             const last =
                 Number(
@@ -501,16 +424,12 @@ function loadAdminDashboard() {
                 trendElement.innerText =
                     "Improving ↑";
 
-            }
-
-            else if (last < first) {
+            } else if (last < first) {
 
                 trendElement.innerText =
                     "Needs Improvement ↓";
 
-            }
-
-            else {
+            } else {
 
                 trendElement.innerText =
                     "Stable →";
@@ -587,32 +506,14 @@ function displayQuestions() {
             document.createElement("div");
 
 
-        // =====================================
-        // CARD STYLE
-        // =====================================
-
-        questionCard.style.padding =
-            "20px";
-
-        questionCard.style.marginBottom =
-            "15px";
-
-        questionCard.style.border =
-            "1px solid #e2e8f0";
-
-        questionCard.style.borderRadius =
-            "14px";
-
-        questionCard.style.background =
-            "#ffffff";
-
+        questionCard.style.padding = "20px";
+        questionCard.style.marginBottom = "15px";
+        questionCard.style.border = "1px solid #e2e8f0";
+        questionCard.style.borderRadius = "14px";
+        questionCard.style.background = "#ffffff";
         questionCard.style.boxShadow =
             "0 4px 12px rgba(0,0,0,0.06)";
 
-
-        // =====================================
-        // QUESTION CONTENT
-        // =====================================
 
         questionCard.innerHTML = `
 
@@ -713,8 +614,6 @@ function displayQuestions() {
             </div>
 
 
-            <!-- DELETE BUTTON -->
-
             <div style="
                 margin-top:16px;
                 display:flex;
@@ -734,31 +633,22 @@ function displayQuestions() {
                         font-size:13px;
                         font-weight:600;
                     "
-                    onmouseover="
-                        this.style.background='#b91c1c'
-                    "
-                    onmouseout="
-                        this.style.background='#dc2626'
-                    "
                 >
                     🗑 Delete
                 </button>
 
             </div>
-
         `;
 
 
-        questionList.appendChild(
-            questionCard
-        );
+        questionList.appendChild(questionCard);
 
     });
 }
 
 
 // =====================================
-// DELETE ONE QUESTION
+// DELETE QUESTION
 // =====================================
 
 function deleteQuestion(questionId) {
@@ -774,10 +664,6 @@ function deleteQuestion(questionId) {
     }
 
 
-    // =====================================
-    // DELETE FROM QUESTION BANK
-    // =====================================
-
     let questions =
         JSON.parse(
             localStorage.getItem("questions")
@@ -785,14 +671,12 @@ function deleteQuestion(questionId) {
 
 
     questions =
-        questions.filter(
-            function (question) {
+        questions.filter(function (question) {
 
-                return Number(question.id) !==
-                    Number(questionId);
+            return Number(question.id) !==
+                Number(questionId);
 
-            }
-        );
+        });
 
 
     localStorage.setItem(
@@ -800,10 +684,6 @@ function deleteQuestion(questionId) {
         JSON.stringify(questions)
     );
 
-
-    // =====================================
-    // DELETE FROM EXAMS ALSO
-    // =====================================
 
     let exams =
         JSON.parse(
@@ -813,24 +693,17 @@ function deleteQuestion(questionId) {
 
     exams.forEach(function (exam) {
 
-        if (
-            Array.isArray(
-                exam.questions
-            )
-        ) {
+        if (Array.isArray(exam.questions)) {
 
             exam.questions =
                 exam.questions.filter(
                     function (question) {
 
-                        return Number(
-                            question.id
-                        ) !==
+                        return Number(question.id) !==
                             Number(questionId);
 
                     }
                 );
-
         }
 
     });
@@ -842,23 +715,13 @@ function deleteQuestion(questionId) {
     );
 
 
-    // =====================================
-    // SUCCESS MESSAGE
-    // =====================================
-
     alert(
         "Question deleted successfully!"
     );
 
 
-    // =====================================
-    // REFRESH
-    // =====================================
-
     displayQuestions();
-
     loadAdminDashboard();
-
 }
 
 
@@ -882,21 +745,16 @@ window.addEventListener(
             );
 
 
-        if (
-            username &&
-            welcome
-        ) {
+        if (username && welcome) {
 
             welcome.innerText =
                 "Welcome, " +
                 username +
                 " 👋";
-
         }
 
 
         loadAdminDashboard();
-
         displayQuestions();
 
     }
@@ -927,10 +785,6 @@ function exportToExcel() {
     }
 
 
-    // =====================================
-    // STUDENT RESULTS
-    // =====================================
-
     const excelData =
         performanceData.map(
             function (result, index) {
@@ -951,9 +805,7 @@ function exportToExcel() {
 
                     Number(result.score) || 0,
 
-                    Number(
-                        result.totalQuestions
-                    ) || 0,
+                    Number(result.totalQuestions) || 0,
 
                     Number(
                         result.percentage || 0
@@ -968,10 +820,6 @@ function exportToExcel() {
             }
         );
 
-
-    // =====================================
-    // CALCULATIONS
-    // =====================================
 
     const marks =
         performanceData.map(
@@ -1038,7 +886,7 @@ function exportToExcel() {
     const averageMarks =
         totalStudents > 0
             ? totalObtainedMarks /
-            totalStudents
+              totalStudents
             : 0;
 
 
@@ -1053,10 +901,6 @@ function exportToExcel() {
             ? Math.min(...marks)
             : 0;
 
-
-    // =====================================
-    // MEDIAN
-    // =====================================
 
     const sortedMarks =
         [...marks].sort(
@@ -1079,9 +923,7 @@ function exportToExcel() {
             );
 
 
-        if (
-            sortedMarks.length % 2 === 0
-        ) {
+        if (sortedMarks.length % 2 === 0) {
 
             medianMark =
                 (
@@ -1089,21 +931,14 @@ function exportToExcel() {
                     sortedMarks[middle]
                 ) / 2;
 
-        }
-
-        else {
+        } else {
 
             medianMark =
                 sortedMarks[middle];
 
         }
-
     }
 
-
-    // =====================================
-    // AVERAGE PERCENTAGE
-    // =====================================
 
     const averagePercentage =
         percentages.length > 0
@@ -1119,10 +954,6 @@ function exportToExcel() {
 
             : 0;
 
-
-    // =====================================
-    // PASS / FAIL
-    // =====================================
 
     const passCount =
         performanceData.filter(
@@ -1166,10 +997,6 @@ function exportToExcel() {
             : 0;
 
 
-    // =====================================
-    // PERFORMANCE LEVEL
-    // =====================================
-
     let performanceLevel =
         "Needs Improvement";
 
@@ -1179,26 +1006,17 @@ function exportToExcel() {
         performanceLevel =
             "Excellent";
 
-    }
-
-    else if (averagePercentage >= 60) {
+    } else if (averagePercentage >= 60) {
 
         performanceLevel =
             "Good";
 
-    }
-
-    else if (averagePercentage >= 40) {
+    } else if (averagePercentage >= 40) {
 
         performanceLevel =
             "Average";
-
     }
 
-
-    // =====================================
-    // CREATE EXCEL WORKBOOK
-    // =====================================
 
     const workbook =
         XLSX.utils.book_new();
@@ -1219,10 +1037,6 @@ function exportToExcel() {
 
     sheetData.push([]);
 
-
-    // =====================================
-    // STUDENT RESULTS
-    // =====================================
 
     sheetData.push([
         "STUDENT RESULTS"
@@ -1254,13 +1068,8 @@ function exportToExcel() {
 
 
     sheetData.push([]);
-
     sheetData.push([]);
 
-
-    // =====================================
-    // PERFORMANCE SUMMARY
-    // =====================================
 
     sheetData.push([
         "PERFORMANCE SUMMARY"
@@ -1353,19 +1162,11 @@ function exportToExcel() {
     ]);
 
 
-    // =====================================
-    // CREATE WORKSHEET
-    // =====================================
-
     const worksheet =
         XLSX.utils.aoa_to_sheet(
             sheetData
         );
 
-
-    // =====================================
-    // COLUMN WIDTH
-    // =====================================
 
     worksheet["!cols"] = [
 
@@ -1382,20 +1183,12 @@ function exportToExcel() {
     ];
 
 
-    // =====================================
-    // ADD SHEET
-    // =====================================
-
     XLSX.utils.book_append_sheet(
         workbook,
         worksheet,
         "Exam Report"
     );
 
-
-    // =====================================
-    // DOWNLOAD EXCEL
-    // =====================================
 
     XLSX.writeFile(
         workbook,
@@ -1406,5 +1199,4 @@ function exportToExcel() {
     alert(
         "Complete Exam Report exported successfully!"
     );
-
 }
