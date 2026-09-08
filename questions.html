@@ -12,7 +12,7 @@
     <title>Smart Question Bank</title>
 
     <link rel="stylesheet"
-          href="css/style.css">
+          href="style.css">
 
 </head>
 
@@ -706,43 +706,16 @@
         </main>
 
     </div>
+<script src="admin.js"></script>
+
+<script>
+    window.addEventListener("DOMContentLoaded", function () {
+        displayQuestions();
+    });
+</script>
 
 
-
-    <!-- ===============================
-         ADMIN JAVASCRIPT
-    =============================== -->
-    <!-- IMPORTANT:
-         admin.js must be loaded ONLY ONCE -->
-
-    <script src="js/admin.js"></script>
-
-
-    <!-- ===============================
-         LOAD SAVED QUESTIONS
-    =============================== -->
-
-    <script>
-
-        window.addEventListener(
-            "DOMContentLoaded",
-            function () {
-
-                displayQuestions();
-
-            }
-        );
-
-    </script>
-    <script src="js/admin.js"></script>
-
-    <script>
-        window.addEventListener("DOMContentLoaded", function () {
-            displayQuestions();
-        });
-    </script>
-
+    
 </body>
 
 </html>
-```
